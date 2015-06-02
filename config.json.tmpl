@@ -1,0 +1,14 @@
+{
+  "sensu": [
+    {
+      "name": "{{ default "Sensu" .Env.SENSU_NAME }}",
+      "host": "{{ default "sensu" .Env.SENSU_HOSTNAME }}",
+      "port": {{ default "4567" .Env.SENSU_PORT }}
+    }
+  ],
+  "uchiwa": {
+    "host": "{{ default "0.0.0.0" .Env.UCHIWA_BIND }}",
+    "port": {{ default "3000" .Env.UCHIWA_PORT }},
+    "refresh": {{ default "5" .Env.UCHIWA_REFRESH }}
+  }
+}
