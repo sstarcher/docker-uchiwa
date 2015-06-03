@@ -1,9 +1,10 @@
+{{ $SENSU_PORT := default .Env.SENSU_PORT "4567" }}
 {
   "sensu": [
     {
       "name": "{{ default .Env.SENSU_NAME "Sensu" }}",
       "host": "{{ default .Env.SENSU_HOSTNAME "sensu"  }}",
-      "port": {{ default .Env.SENSU_PORT "4567" }}
+      "port": {{ default .Env.SENSU_PORT_4567_TCP $SENSU_PORT }}
     }
   ],
   "uchiwa": {
