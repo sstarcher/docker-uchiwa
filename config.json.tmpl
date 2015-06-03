@@ -4,7 +4,7 @@
     {
       "name": "{{ default .Env.SENSU_DC_NAME "Sensu" }}",
       "host": "{{ default .Env.SENSU_HOSTNAME "sensu"  }}",
-      "port": {{ default .Env.SENSU_PORT_4567_TCP $SENSU_PORT }}
+      "port": {{ default .Env.SENSU_PORT_4567_TCP_PORT $SENSU_PORT }}
     }
   ],
   "uchiwa": {
