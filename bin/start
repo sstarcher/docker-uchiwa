@@ -1,0 +1,4 @@
+#!/bin/bash
+
+envtpl -in /config/config.json.tmpl > /config/config.json
+/opt/uchiwa/bin/uchiwa -c /config/config.json -p /opt/uchiwa/src/public

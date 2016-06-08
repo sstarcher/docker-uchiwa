@@ -1,0 +1,15 @@
+{{ $SENSU_PORT := default .Env.SENSU_PORT "4567" }}
+{
+  "sensu": [
+    {
+      "name": "{{ default .Env.SENSU_DC_NAME "Sensu" }}",
+      "host": "{{ default .Env.SENSU_HOSTNAME "sensu"  }}",
+      "port": {{ default .Env.SENSU_PORT_4567_TCP_PORT $SENSU_PORT }}
+    }
+  ],
+  "uchiwa": {
+    "host": "{{ default .Env.UCHIWA_BIND "0.0.0.0"  }}",
+    "port": {{ default .Env.UCHIWA_PORT "3000" }},
+    "refresh": {{ default .Env.UCHIWA_REFRESH  "5" }}
+  }
+}
