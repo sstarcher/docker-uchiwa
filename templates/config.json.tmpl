@@ -1,15 +1,18 @@
 {{ $SENSU_PORT := default "4567" .SENSU_PORT }}
 {
+  {{ if .SENSU_HOSTNAME }}
   "sensu": [
     {
       "name": "{{ default "Sensu" .SENSU_DC_NAME }}",
-      "host": "{{ default "sensu" .SENSU_HOSTNAME   }}",
+      "host": "{{ .SENSU_HOSTNAME }}",
       "port": {{ default $SENSU_PORT .SENSU_PORT_4567_TCP_PORT }}
     }
   ],
+  {{ end }}
   "uchiwa": {
-    "host": "{{ default "0.0.0.0" .UCHIWA_BIND  }}",
+    "host": {{ default "0.0.0.0" .UCHIWA_BIND  | quote }},
     "port": {{ default "3000" .UCHIWA_PORT  }},
-    "refresh": {{ default "5" .UCHIWA_REFRESH }}
+    "refresh": {{ default "10" .UCHIWA_REFRESH }},
+    "loglevel": {{ default "info" .UCHIWA_LOG_LEVEL | quote }}
   }
 }
