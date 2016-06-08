@@ -6,7 +6,7 @@ envtpl -in /config/config.json.tmpl > /etc/sensu/uchiwa.json
     -c /etc/sensu/uchiwa.json \
     -p /opt/uchiwa/src/public
 
-if [ $? -eq 0 ]; then
+if [ $? -ne 0 ]; then
     echo '/etc/sensu/uchiwa.json'
     cat /etc/sensu/uchiwa.json
 fi
