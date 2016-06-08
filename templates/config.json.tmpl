@@ -1,9 +1,9 @@
 {{ $SENSU_PORT := default "4567" .SENSU_PORT }}
 {
-  {{ if .SENSU_HOSTNAME }}
+  {{ if .SENSU_DC_NAME }}
   "sensu": [
     {
-      "name": "{{ default "Sensu" .SENSU_DC_NAME }}",
+      "name": "{{ .SENSU_DC_NAME }}",
       "host": "{{ .SENSU_HOSTNAME }}",
       "port": {{ default $SENSU_PORT .SENSU_PORT_4567_TCP_PORT }}
     }
