@@ -15,7 +15,7 @@ RUN \
     curl http://repositories.sensuapp.org/apt/pubkey.gpg | apt-key add - && \
     echo "deb http://repositories.sensuapp.org/apt sensu main" > /etc/apt/sources.list.d/sensu.list
 
-ENV UCHIWA_VERSION=0.15.0-1
+ENV UCHIWA_VERSION=0.16.0-1
 RUN \
     apt-get update && \
     apt-get install -y uchiwa=${UCHIWA_VERSION} && \
