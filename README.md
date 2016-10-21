@@ -18,3 +18,5 @@ SENSU_DC_NAME
 SENSU_HOSTNAME
 SENSU_SERVICE_PORT 4567
 ```
+
+* Check data is pulled from the Sensu API.  Checks will only show up in Uchiwa if they are locally on the machine running the Sensu API.
