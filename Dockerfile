@@ -15,7 +15,7 @@ RUN \
     curl https://sensu.global.ssl.fastly.net/apt/pubkey.gpg | apt-key add - && \
     echo "deb https://sensu.global.ssl.fastly.net/apt jessie main" > /etc/apt/sources.list.d/sensu.list
 
-ENV UCHIWA_VERSION=0.22.2-1
+ENV UCHIWA_VERSION=0.23.1-1
 RUN \
     apt-get update && \
     apt-get install -y uchiwa=${UCHIWA_VERSION} && \
