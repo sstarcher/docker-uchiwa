@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ubuntu:zesty-20170411
 MAINTAINER Shane Starcher <shanestarcher@gmail.com>
 
 RUN \
@@ -13,7 +13,7 @@ RUN \
 
 RUN \
     curl https://sensu.global.ssl.fastly.net/apt/pubkey.gpg | apt-key add - && \
-    echo "deb https://sensu.global.ssl.fastly.net/apt jessie main" > /etc/apt/sources.list.d/sensu.list
+    echo "deb https://sensu.global.ssl.fastly.net/apt xenial main" > /etc/apt/sources.list.d/sensu.list
 
 ENV UCHIWA_VERSION=0.23.1-1
 RUN \
