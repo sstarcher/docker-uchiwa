@@ -15,7 +15,7 @@ RUN \
     curl https://sensu.global.ssl.fastly.net/apt/pubkey.gpg | apt-key add - && \
     echo "deb https://sensu.global.ssl.fastly.net/apt xenial main" > /etc/apt/sources.list.d/sensu.list
 
-ENV UCHIWA_VERSION=0.25.0-1
+ENV UCHIWA_VERSION=0.25.2-1
 RUN \
     apt-get update && \
     apt-get install -y uchiwa=${UCHIWA_VERSION} && \
