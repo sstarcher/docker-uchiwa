@@ -1,4 +1,4 @@
-FROM ubuntu:zesty-20170411
+FROM ubuntu:18.04
 MAINTAINER Shane Starcher <shanestarcher@gmail.com>
 
 RUN \
@@ -15,7 +15,7 @@ RUN \
     curl https://sensu.global.ssl.fastly.net/apt/pubkey.gpg | apt-key add - && \
     echo "deb https://sensu.global.ssl.fastly.net/apt xenial main" > /etc/apt/sources.list.d/sensu.list
 
-ENV UCHIWA_VERSION=0.25.3-1
+ENV UCHIWA_VERSION=1.1.2-1
 RUN \
     apt-get update && \
     apt-get install -y uchiwa=${UCHIWA_VERSION} && \
