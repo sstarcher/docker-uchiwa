@@ -3,7 +3,7 @@ MAINTAINER Shane Starcher <shanestarcher@gmail.com>
 
 RUN \
     apt-get update && \
-    apt-get install -y curl ca-certificates apt-transport-https --no-install-recommends && \
+    apt-get install -y curl gnupg gnupg2 ca-certificates apt-transport-https --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
 ENV ENVTPL_VERSION=0.2.3
